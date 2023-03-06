@@ -10,7 +10,7 @@ import {
   Form,
   FormGroup,
   Label,
-  Input
+  Input,
 } from "reactstrap";
 
 const Login = (props) => {
@@ -19,7 +19,7 @@ const Login = (props) => {
   const [password, setPassword] = React.useState("");
   const [mensaje, setmensaje] = React.useState("");
   localStorage.setItem("login", "No_logueado");
-  
+
   const loginHandler = (ev) => {
     ev.preventDefault();
     if (!username || !password) {
@@ -33,7 +33,6 @@ const Login = (props) => {
     }
     setmensaje("El usuario o contraseña son incorrectos");
 
-   
     /*try {
       fetch("${process.env.REACT_APP_API}/api/usuarios", {
         method: "POST",
@@ -54,12 +53,6 @@ const Login = (props) => {
       console.log(error);
     }*/
   };
-  
-
-  useEffect(() => {
-    getStyle()
-  }, [])
- 
 
   return (
     <Container className="container">
