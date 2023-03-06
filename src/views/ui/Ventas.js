@@ -178,7 +178,7 @@ const Ventas = () => {
     );
     console.log(arrayFilter);
     setSearchVentas(arrayFilter);
-  }, [buscar, Ventas]);
+  }, [Ventas]);
 
   const modalDetalles = () => {
     return (
