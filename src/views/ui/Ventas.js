@@ -173,12 +173,12 @@ const Ventas = () => {
   };
 
   useEffect(() => {
-    const arrayFilter = Ventas.filter(
-      (h) => h.codigo === buscar.buscar.trim().toLocaleLowerCase()
+    const arrayFilter = Ventas?.filter(
+      (h) => h.codigo === buscar?.buscar.trim().toLocaleLowerCase()
     );
-    console.log(arrayFilter);
+    
     setSearchVentas(arrayFilter);
-  }, [Ventas]);
+  }, [buscar, Ventas]);
 
   const modalDetalles = () => {
     return (
