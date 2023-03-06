@@ -25,17 +25,17 @@ import Emiser from "../assets/images/emiser.png";
 
 const Header = () => {
   const navigate = useNavigate();
-  const [isOpen, setIsOpen] = useState(false);
+
   const [ventacierre, setVentacierre] = useState([]);
   const [modalcierreventa, setModalCierreventa] = useState(false);
-  const [precio, setprecio] = useState()
+  const [precio, setprecio] = useState();
   var today = new Date();
   var now = today.toLocaleTimeString("en-US");
   console.log(now);
   const toggleCierreventa = () => {
     setModalCierreventa(!modalcierreventa);
   };
-  
+
   const capturarDatosCierre = (e) => {
     const { name, value } = e.target;
     setVentacierre({
@@ -49,7 +49,7 @@ const Header = () => {
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
 
   const toggle = () => setDropdownOpen((prevState) => !prevState);
- 
+
   const showMobilemenu = () => {
     document.getElementById("sidebarArea").classList.toggle("showSidebar");
   };
@@ -58,8 +58,8 @@ const Header = () => {
   };
   useEffect(() => {
     const precio = localStorage.getItem("dolarhoy");
-    setprecio(precio)
-  }, [])
+    setprecio(precio);
+  }, []);
   const modalNewCierreventa = () => {
     return (
       <Modal isOpen={modalcierreventa} toggle={toggleCierreventa}>
@@ -90,7 +90,9 @@ const Header = () => {
             </Row>
 
             <ModalFooter>
-              <Button color="secondary" onClick={toggleCierreventa}>Cancelar</Button>
+              <Button color="secondary" onClick={toggleCierreventa}>
+                Cancelar
+              </Button>
               <Button color="primary" type="submit" className="btn_dolar">
                 Actualizar dolar
               </Button>
@@ -101,13 +103,18 @@ const Header = () => {
     );
   };
   return (
-    <Navbar color="primary" light expand="md" className="fix-header" style={{background: "#005DA9"}}>
+    <Navbar
+      color="primary"
+      light
+      expand="md"
+      className="fix-header"
+      style={{ background: "#005DA9" }}
+    >
       <div className="d-flex align-items-center">
         <div className="d-lg-block d-none me-5 pe-3">
           <img src={Emiser} alt="Emiser" className="logo" />
         </div>
         {modalNewCierreventa()}
-       
 
         <Button
           color="primary"
@@ -121,13 +128,18 @@ const Header = () => {
         className="hstack gap-2"
         style={{ marginLeft: "auto", right: 0, justifyContent: "right" }}
       >
-       
         <div className="pre-dolar">$={precio}</div>
-       
-        <Button color="success" className="precio_dolar" onClick={toggleCierreventa}>Actualizar precio del dolar</Button>
+
+        <Button
+          color="success"
+          className="precio_dolar"
+          onClick={toggleCierreventa}
+        >
+          Actualizar precio del dolar
+        </Button>
       </div>
       <div>
-        <Collapse navbar isOpen={isOpen}>
+        <Collapse navbar>
           <Dropdown isOpen={dropdownOpen} toggle={toggle}>
             <DropdownToggle
               color="transparent"
