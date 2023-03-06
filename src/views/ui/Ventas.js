@@ -18,7 +18,6 @@ import {
   Button,
   CardHeader,
 } from "reactstrap";
-import integrado from "../../assets/images/users/integrado.jpg";
 
 const Ventas = () => {
   const [Ventas, setVentas] = useState([]);
@@ -176,7 +175,7 @@ const Ventas = () => {
     const arrayFilter = Ventas?.filter(
       (h) => h.codigo === buscar?.buscar.trim().toLocaleLowerCase()
     );
-    
+
     setSearchVentas(arrayFilter);
   }, [buscar, Ventas]);
 
@@ -506,22 +505,7 @@ const Ventas = () => {
                     {Ventas.map((ven, index) => (
                       <tr key={index} className="border-top item">
                         <td className="num">{index + 1}</td>
-                        <td>
-                          <div className="d-flex align-items-center p-2">
-                            <img
-                              src={integrado}
-                              className="rounded-circle"
-                              alt={integrado}
-                              width="45"
-                              height="45"
-                            />
-                            <div className="ms-3">
-                              <p className="mb-0 name_pro">
-                                {ven.codigo?.toUpperCase()}
-                              </p>
-                            </div>
-                          </div>
-                        </td>
+                        <td><b className="codigo">{ven.codigo?.toUpperCase()}</b></td>
                         <td>{ven.precio}</td>
                         <td>{ven.cantidad}</td>
                         <td>
@@ -592,20 +576,7 @@ const Ventas = () => {
                       <tr key={index} className="border-top item">
                         <td className="num">{index + 1}</td>
                         <td>
-                          <div className="d-flex align-items-center p-2">
-                            <img
-                              src={integrado}
-                              className="rounded-circle"
-                              alt={integrado}
-                              width="45"
-                              height="45"
-                            />
-                            <div className="ms-3">
-                              <p className="mb-0 name_pro">
-                                {ven.codigo?.toUpperCase()}
-                              </p>
-                            </div>
-                          </div>
+                        <b className="codigo">{ven.codigo?.toUpperCase()}</b>
                         </td>
                         <td>{ven.precio}</td>
                         <td>{ven.cantidad}</td>

@@ -68,6 +68,9 @@ html{
 .card-dash {
   margin-top: 20px;
 }
+.codigo{
+  font-size: 22px;
+}
 .container-modules {
   display: flex;
   flex-wrap: wrap;
