@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router";
 import {
   Container,
@@ -32,26 +32,6 @@ const Login = (props) => {
       }, 1000);
     }
     setmensaje("El usuario o contraseña son incorrectos");
-
-    /*try {
-      fetch("${process.env.REACT_APP_API}/api/usuarios", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          correo: username,
-          password: password,
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log("RESPONSE from login success ", data);
-          setLoggedin(true);
-        });
-    } catch (error) {
-      console.log(error);
-    }*/
   };
 
   return (
