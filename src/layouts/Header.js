@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import {
   Navbar,
   Collapse,
-  NavbarBrand,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
@@ -20,7 +19,7 @@ import {
   Label,
   ModalFooter,
 } from "reactstrap";
-import { ReactComponent as LogoWhite } from "../assets/images/logos/materialprowhite.svg";
+
 import user1 from "../assets/images/users/user1.jpg";
 import Emiser from "../assets/images/emiser.png";
 
@@ -50,9 +49,7 @@ const Header = () => {
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
 
   const toggle = () => setDropdownOpen((prevState) => !prevState);
-  const Handletoggle = () => {
-    setIsOpen(!isOpen);
-  };
+ 
   const showMobilemenu = () => {
     document.getElementById("sidebarArea").classList.toggle("showSidebar");
   };
