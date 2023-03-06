@@ -17,16 +17,16 @@ const Login = (props) => {
   const navigate = useNavigate();
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const [back, setBack] = React.useState(false)
   const [mensaje, setmensaje] = React.useState("");
   localStorage.setItem("login", "No_logueado");
+  
   const loginHandler = (ev) => {
     ev.preventDefault();
     if (!username || !password) {
       return;
     }
     localStorage.setItem("login", "Logueado");
-    if (username == "mariemilys6@gmail.com" && password == "pablito") {
+    if (username === "mariemilys6@gmail.com" && password === "pablito") {
       return setTimeout(() => {
         navigate("/dashboard");
       }, 1000);
@@ -54,9 +54,7 @@ const Login = (props) => {
       console.log(error);
     }*/
   };
-  const getStyle=()=>{
-    setBack(true)
-  }
+  
 
   useEffect(() => {
     getStyle()

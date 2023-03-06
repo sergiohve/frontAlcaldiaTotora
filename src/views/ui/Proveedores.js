@@ -21,6 +21,7 @@ const Cajasregistradas = () => {
     const response = await axios.delete(
       `${process.env.REACT_APP_API}/api/proveedores/${id}`
     );
+    console.log(response)
     getProveedor();
   };
 

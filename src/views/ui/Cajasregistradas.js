@@ -18,7 +18,6 @@ const Cajasregistradas = () => {
   const navigate= useNavigate();
   const [modal, setModal] = useState(false);
   const [cajas, setCajas] = useState([]);
-  const params = useParams();
 
   const toggle = (id, numero_caja, codigo, efectivo, estado) => {
     setModal(!modal)
@@ -34,6 +33,7 @@ const Cajasregistradas = () => {
     const response = await axios.delete(
       `${process.env.REACT_APP_API}/api/cajas/${id}`
     );
+    console.log(response)
     getCaja();
   };
 

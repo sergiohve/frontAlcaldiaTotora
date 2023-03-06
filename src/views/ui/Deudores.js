@@ -23,7 +23,6 @@ const Deudores = () => {
   const [deudores, setdeudores] = useState([]);
   const [deudor, setdeudor] = useState([]);
   const [modal, setModal] = useState(false);
-  const [usuarios, setUsuarios] = useState([]);
   var today = new Date();
   var day = today.getDate();
   var month = today.getMonth() + 1;
@@ -41,13 +40,10 @@ const Deudores = () => {
     const response = await axios.delete(
       `${process.env.REACT_APP_API}/api/deudores/${id}`
     );
+    console.log(response)
     getDeudores();
   };
-  const getUsuarios = async () => {
-    const response = await axios.get(`${process.env.REACT_APP_API}/api/usuarios`);
 
-    setUsuarios(response.data);
-  };
   const valorInicial = {
     fecha: `${day}/${month}/${year}`,
     nombre_deudor: "",

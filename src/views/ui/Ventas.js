@@ -1,7 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
-
 import {
   Card,
   CardBody,
@@ -30,12 +28,11 @@ const Ventas = () => {
   const [usuarios, setUsuarios] = useState([]);
   const [modal, setModal] = useState(false);
   const [buscar, setBuscar] = useState();
-  const [modalcierreventa, setModalCierreventa] = useState(true);
   const [modaldetalles, setModalDetalles] = useState(false);
   const [infoVenta, setInfoVenta] = useState();
   const [dolarhoy, setDolarhoy] = useState();
-  const [tooltipOpen, setTooltipOpen] = useState(false);
   const [fecha, setfecha] = useState();
+  console.log(estado)
   const getFecha = () => {
     var today = new Date();
 
@@ -72,7 +69,7 @@ const Ventas = () => {
     descripcion
   ) => {
     setModalDetalles(!modaldetalles);
-    if (modaldetalles == false) {
+    if (modaldetalles === false) {
       setInfoVenta({
         codigo,
         precio,
@@ -103,6 +100,7 @@ const Ventas = () => {
     const response = await axios.delete(
       `${process.env.REACT_APP_API}/api/ventas/${id}`
     );
+    console.log(response)
     getVentas();
   };
 
@@ -175,7 +173,7 @@ const Ventas = () => {
   };
 
   useEffect(() => {
-    const arrayFilter = Ventas.filter((h) => h.codigo == buscar.buscar.trim().toLocaleLowerCase());
+    const arrayFilter = Ventas.filter((h) => h.codigo === buscar.buscar.trim().toLocaleLowerCase());
     console.log(arrayFilter);
     setSearchVentas(arrayFilter);
   }, [buscar]);

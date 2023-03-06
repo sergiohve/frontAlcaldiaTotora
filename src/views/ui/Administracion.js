@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-import { Card, CardBody, CardTitle, CardSubtitle, Table } from "reactstrap";
+import { Card, CardBody, CardTitle, Table } from "reactstrap";
 import user1 from "../../assets/images/users/user1.jpg";
 
 
@@ -11,7 +11,7 @@ const Alerts = () => {
   const [productos, setProductos] = useState([]);
 
   const getProducts = async () => {
-    const response = await axios.get("http://localhost:4000/api/productos");
+    const response = await axios.get("https://backinvent.onrender.com/api/productos");
     console.log(response.data);
     setProductos(response.data);
   };

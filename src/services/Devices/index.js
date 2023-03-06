@@ -5,7 +5,6 @@ const getBest = async () => {
   const { data } = await axios.get(baseUrlBest);
   return data;
 };
-
 export default {
   getBest
 };
