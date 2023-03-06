@@ -270,4 +270,8 @@ html{
   .title-item{
     font-size: 9px;
   }
+  .precio_dolar{
+    width: 160px;
+    font-size: 10px;
+  }
 }

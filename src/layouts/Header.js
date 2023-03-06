@@ -110,9 +110,7 @@ const Header = () => {
           <img src={Emiser} alt="Emiser" className="logo" />
         </div>
         {modalNewCierreventa()}
-        <NavbarBrand href="/">
-          <LogoWhite className=" d-lg-none" />
-        </NavbarBrand>
+       
 
         <Button
           color="primary"
@@ -126,21 +124,10 @@ const Header = () => {
         className="hstack gap-2"
         style={{ marginLeft: "auto", right: 0, justifyContent: "right" }}
       >
-        <Button
-          color="primary"
-          size="sm"
-          className="d-sm-block d-md-none"
-          onClick={Handletoggle}
-        >
-          {isOpen ? (
-            <i className="bi bi-x"></i>
-          ) : (
-            <i className="bi bi-three-dots-vertical"></i>
-          )}
-        </Button>
+       
         <div className="pre-dolar">$={precio}</div>
        
-        <Button color="success" onClick={toggleCierreventa}>Actualizar precio del dolar</Button>
+        <Button color="success" className="precio_dolar" onClick={toggleCierreventa}>Actualizar precio del dolar</Button>
       </div>
       <div>
         <Collapse navbar isOpen={isOpen}>
