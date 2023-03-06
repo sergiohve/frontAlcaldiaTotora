@@ -16,7 +16,7 @@ import {
   Input,
   ModalFooter,
   Button,
-  CardHeader
+  CardHeader,
 } from "reactstrap";
 import integrado from "../../assets/images/users/integrado.jpg";
 
@@ -32,7 +32,7 @@ const Ventas = () => {
   const [infoVenta, setInfoVenta] = useState();
   const [dolarhoy, setDolarhoy] = useState();
   const [fecha, setfecha] = useState();
-  console.log(estado)
+  console.log(estado);
   const getFecha = () => {
     var today = new Date();
 
@@ -45,13 +45,11 @@ const Ventas = () => {
 
   console.log(dolarhoy);
 
-
-
-  const preciodolar = () => {
+  useEffect(() => {
     const precio = localStorage.getItem("dolarhoy");
     setDolarhoy(precio);
-    console.log(dolarhoy);
-  };
+  }, []);
+
   const toggle = () => {
     setModal(!modal);
   };
@@ -100,12 +98,14 @@ const Ventas = () => {
     const response = await axios.delete(
       `${process.env.REACT_APP_API}/api/ventas/${id}`
     );
-    console.log(response)
+    console.log(response);
     getVentas();
   };
 
   const getUsuarios = async () => {
-    const response = await axios.get(`${process.env.REACT_APP_API}/api/usuarios`);
+    const response = await axios.get(
+      `${process.env.REACT_APP_API}/api/usuarios`
+    );
 
     setUsuarios(response.data);
   };
@@ -145,7 +145,7 @@ const Ventas = () => {
   const guardarDatos = async (e) => {
     //Crear la logica para la peticion post
     const newVenta = {
-      codigo: (Venta.codigo).toLocaleLowerCase(),
+      codigo: Venta.codigo.toLocaleLowerCase(),
       precio: Venta.precio,
       cantidad: Venta.cantidad,
       metodo_pago: Venta.metodo_pago,
@@ -173,7 +173,9 @@ const Ventas = () => {
   };
 
   useEffect(() => {
-    const arrayFilter = Ventas.filter((h) => h.codigo === buscar.buscar.trim().toLocaleLowerCase());
+    const arrayFilter = Ventas.filter(
+      (h) => h.codigo === buscar.buscar.trim().toLocaleLowerCase()
+    );
     console.log(arrayFilter);
     setSearchVentas(arrayFilter);
   }, [buscar]);
@@ -428,7 +430,6 @@ const Ventas = () => {
     getVentas();
     getEstado();
     getUsuarios();
-    preciodolar();
   }, []);
   useEffect(() => {
     getFecha();
@@ -481,13 +482,13 @@ const Ventas = () => {
         <CardBody>
           <CardTitle tag="h5">Lista de Ventas</CardTitle>
 
-          {searchVentas.length == 0 && (
+          {searchVentas.length === 0 && (
             <Table className="no-wrap align-middle" responsive borderless hover>
               {Ventas.reverse() && Ventas.length ? (
                 <>
                   <thead>
                     <tr>
-                    <th>Num</th>
+                      <th>Num</th>
                       <th>CODIGO</th>
                       <th>PRECIO($)</th>
                       <th>CANTIDAD</th>
@@ -504,7 +505,7 @@ const Ventas = () => {
                   <tbody>
                     {Ventas.map((ven, index) => (
                       <tr key={index} className="border-top item">
-                        <td className="num">{index+1}</td>
+                        <td className="num">{index + 1}</td>
                         <td>
                           <div className="d-flex align-items-center p-2">
                             <img
@@ -572,7 +573,7 @@ const Ventas = () => {
                 <>
                   <thead>
                     <tr>
-                    <th>Nº</th>
+                      <th>Nº</th>
                       <th>CODIGO</th>
                       <th>PRECIO($)</th>
                       <th>CANTIDAD</th>
@@ -589,7 +590,7 @@ const Ventas = () => {
                   <tbody>
                     {searchVentas.map((ven, index) => (
                       <tr key={index} className="border-top item">
-                         <td className="num">{index+1}</td>
+                        <td className="num">{index + 1}</td>
                         <td>
                           <div className="d-flex align-items-center p-2">
                             <img

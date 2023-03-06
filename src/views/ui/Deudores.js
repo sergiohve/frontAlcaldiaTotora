@@ -43,6 +43,7 @@ const Deudores = () => {
     const response = await axios.delete(
       `${process.env.REACT_APP_API}/api/deudores/${id}`
     );
+    console.log(response)
     getDeudores();
   };
   const getUsuarios = async () => {
