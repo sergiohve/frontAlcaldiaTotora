@@ -242,7 +242,7 @@ const Ventas = () => {
     return (
       <Modal isOpen={modal} toggle={toggle} className="cont_modalventas">
         <ModalHeader toggle={toggle}>NUEVA VENTA</ModalHeader>
-        <ModalBody>
+        <ModalBody >
           <Form onSubmit={guardarDatos}>
             <Row className="mt-3">
               <Col xs="6" sm="4">

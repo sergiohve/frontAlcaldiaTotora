@@ -1,4 +1,4 @@
-html{
+html {
   overflow-y: scroll;
   scrollbar-color: yellow #800080;
   scrollbar-width: 10px;
@@ -8,16 +8,14 @@ html{
   position: fixed;
   z-index: 10;
   width: 100%;
-  
 }
 .navbar {
-  background-color: #005DA9;
-  
+  background-color: #005da9;
 }
-.num{
+.num {
   width: 5px;
 }
-.search{
+.search {
   height: 50px;
   width: 30%;
   margin: 20px;
@@ -25,25 +23,24 @@ html{
   margin-left: auto;
   right: 0;
 }
-.pre-dolar{
+.pre-dolar {
   color: white;
   font-weight: 800;
 }
-.container{
+.container {
   width: 30%;
   margin-top: 40px;
 
   background-repeat: no-repeat;
   height: 100%;
-  background-position-x:center;
-  background-position-y:center;
+  background-position-x: center;
+  background-position-y: center;
   background-size: cover;
-  
 }
-.center{
+.center {
   margin-top: 10px;
 }
-.login{
+.login {
   width: 100%;
 }
 
@@ -55,7 +52,7 @@ html{
   background-size: cover;
   border-radius: 10px;
 }
-.msg-alerta{
+.msg-alerta {
   color: red;
   margin: 5px;
 }
@@ -68,9 +65,10 @@ html{
 .card-dash {
   margin-top: 20px;
 }
-.codigo{
+.codigo {
   font-size: 22px;
 }
+
 .container-modules {
   display: flex;
   flex-wrap: wrap;
@@ -174,35 +172,35 @@ html{
   cursor: pointer;
   margin-left: 10px;
 }
-.cont_delete{
+.cont_delete {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
 }
-.active{
+.active {
   color: white;
   font-weight: 900;
- 
+
   background-color: rgb(18, 16, 20);
   border-radius: 10px;
 }
-.center_nom{
+.center_nom {
   margin-left: auto;
   margin-right: auto;
   font-size: 50px;
   text-align: center;
 
-  color: #FFF;
+  color: #fff;
   border-radius: 15px;
   animation: center_nom 4s ease 0s infinite;
 }
-.menu_mobile{
+.menu_mobile {
   color: white;
 }
-.dolar-tittle{
+.dolar-tittle {
   color: white;
   font-weight: 800;
-  font-family:  Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Haettenschweiler, "Arial Narrow Bold", sans-serif;
   animation: dolar-tittle 2s ease 2s infinite;
   margin-bottom: -10px;
   border-radius: 10px;
@@ -210,31 +208,43 @@ html{
   font-size: 20px;
   padding: 10px;
 }
-.center{
+.center {
   text-align: center;
 }
 @keyframes dolar-tittle {
-  from { color: red; border: 4px solid black; }  
-  to { color: black; border: 4px solid red;}
-  
+  from {
+    color: red;
+    border: 4px solid black;
+  }
+  to {
+    color: black;
+    border: 4px solid red;
+  }
 }
 
 @keyframes center_nom {
-  from { background: red; margin-top: 600px;}  
-  to { background: rgb(11, 120, 245); margin-top: 0px;}
-  
+  from {
+    background: red;
+    margin-top: 600px;
+  }
+  to {
+    background: rgb(11, 120, 245);
+    margin-top: 0px;
+  }
+}
+.cont_modalventas {
+  font-family: Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
-
 @media (max-width: 995px) {
-  .profilebg{
+  .profilebg {
     margin-top: 80px;
     width: 98%;
   }
-  .container{
+  .container {
     width: 50%;
   }
-  .search{
+  .search {
     height: 55px;
     width: 40%;
     margin: 20px;
@@ -242,18 +252,17 @@ html{
   }
 }
 @media (max-width: 600px) {
-  .title-item{
+  .title-item {
     font-size: 15px;
   }
-  .center_nom{
+  .center_nom {
     padding: 10px;
     font-size: 20px;
-  
   }
-  .container{
+  .container {
     width: 70%;
   }
-  .search{
+  .search {
     height: 45px;
     width: 70%;
     margin: 20px;
@@ -261,19 +270,18 @@ html{
   }
 }
 @media (max-width: 475px) {
-  .title-item{
+  .title-item {
     font-size: 12px;
   }
-  .container{
+  .container {
     width: 100%;
   }
-  
 }
 @media (max-width: 407px) {
-  .title-item{
+  .title-item {
     font-size: 9px;
   }
-  .precio_dolar{
+  .precio_dolar {
     width: 160px;
     font-size: 10px;
   }
