@@ -1,8 +1,6 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { Card, CardBody, CardTitle, CardSubtitle, Table } from "reactstrap";
-import user1 from "../../assets/images/users/user1.jpg";
+import { Card, CardBody, Table } from "reactstrap";
 
 const ProjectTables = ({ modulos }) => {
   return (

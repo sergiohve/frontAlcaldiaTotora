@@ -1,11 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   Card,
   CardBody,
-  CardTitle,
-  CardSubtitle,
   Table,
   Row,
   Col,
@@ -21,7 +19,6 @@ const Cajasregistradas = () => {
   const [modal, setModal] = useState(false);
   const [cajas, setCajas] = useState([]);
   const params = useParams();
-  const { id } = params;
 
   const toggle = (id, numero_caja, codigo, efectivo, estado) => {
     setModal(!modal)
@@ -48,7 +45,6 @@ const Cajasregistradas = () => {
   };
 
   const [caja, setCaja] = useState(valorInicial);
-  const [mensaje, setMensaje] = useState("");
 
   const capturarDatos = (e) => {
     const { name, value } = e.target;

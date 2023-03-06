@@ -1,5 +1,4 @@
-import { Row, Col, Card, CardBody, CardTitle, Button } from "reactstrap";
-import Sitio_construccion from "../assets/images/sitio.jpg";
+import { Row, Col } from "reactstrap";
 const Settings = () => {
   return (
     <Row>

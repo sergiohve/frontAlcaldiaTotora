@@ -1,46 +1,23 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
-import {
-  Card,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Table,
-  Row,
-  Col,
-  FormGroup,
-  Form,
-  Input,
-  Label,
-} from "reactstrap";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { useNavigate, useParams } from "react-router-dom";
+import { Card, CardBody, Table, Row, Col } from "reactstrap";
 
 const Devoluciones = () => {
-  const navigate = useNavigate();
   const [devolucion, setDevolucion] = useState([]);
-  const params = useParams();
-  const { id } = params;
 
   const getDevoluciones = async () => {
-    const response = await axios.get(`${process.env.REACT_APP_API}/api/devoluciones`);
+    const response = await axios.get(
+      `${process.env.REACT_APP_API}/api/devoluciones`
+    );
     console.log(response.data);
     setDevolucion(response.data);
-  };
-  const deleteCaja = async (id) => {
-    const response = await axios.delete(
-      `${process.env.REACT_APP_API}/api/devoluciones/${id}`
-    );
-    getDevoluciones();
   };
 
   useEffect(() => {
     getDevoluciones();
   }, []);
 
-  const updateDatos = async (id, numero_caja, codigo, estado) => {
-    navigate(`/dashboard/cajas/updatecaja/${id}`);
-  };
   return (
     <div>
       <h2 className="card-title">DEVOLUCIONES REALIZADAS</h2>

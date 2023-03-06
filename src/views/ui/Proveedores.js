@@ -4,12 +4,10 @@ import { useEffect, useState } from "react";
 import {
   Card,
   CardBody,
-  CardTitle,
-  CardSubtitle,
   Table,
   Button,
 } from "reactstrap";
-import user1 from "../../assets/images/users/user1.jpg";
+
 
 const Cajasregistradas = () => {
   const [proveedor, setProveedor] = useState([]);

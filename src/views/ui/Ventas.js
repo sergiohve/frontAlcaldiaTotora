@@ -6,7 +6,6 @@ import {
   Card,
   CardBody,
   CardTitle,
-  CardSubtitle,
   Table,
   Row,
   Col,
@@ -19,14 +18,11 @@ import {
   Input,
   ModalFooter,
   Button,
-  FormText,
-  Tooltip,
-  CardHeader,
+  CardHeader
 } from "reactstrap";
 import integrado from "../../assets/images/users/integrado.jpg";
 
 const Ventas = () => {
-  const navigate = useNavigate();
   const [Ventas, setVentas] = useState([]);
   const [searchVentas, setSearchVentas] = useState([]);
 
@@ -52,7 +48,7 @@ const Ventas = () => {
 
   console.log(dolarhoy);
 
-  const toggleTool = () => setTooltipOpen(!tooltipOpen);
+
 
   const preciodolar = () => {
     const precio = localStorage.getItem("dolarhoy");
@@ -61,9 +57,6 @@ const Ventas = () => {
   };
   const toggle = () => {
     setModal(!modal);
-  };
-  const toggleCierreventa = () => {
-    setModalCierreventa(!modalcierreventa);
   };
   const toggleDetalles = (
     codigo,

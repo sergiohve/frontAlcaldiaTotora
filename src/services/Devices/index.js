@@ -6,9 +6,6 @@ const getBest = async () => {
   return data;
 };
 
-
-
 export default {
   getBest
-  
 };

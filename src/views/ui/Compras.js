@@ -5,7 +5,6 @@ import {
   Card,
   CardBody,
   CardTitle,
-  CardSubtitle,
   Table,
   Row,
   Col,
@@ -18,7 +17,6 @@ import {
   Input,
   ModalFooter,
   Button,
-  FormText,
 } from "reactstrap";
 import integrado from "../../assets/images/users/integrado.jpg";
 
@@ -41,13 +39,15 @@ const Compras = () => {
   };
   const toggleDetalles = (fecha, total, proveedor, usuario, descripcion) => {
     setModalDetalles(!modaldetalles);
-    if (modaldetalles == false) {
+    if (modaldetalles === false) {
       setInfoCompra({ fecha, total, proveedor, usuario, descripcion });
     }
   };
 
   const getCompras = async () => {
-    const response = await axios.get(`${process.env.REACT_APP_API}/api/compras`);
+    const response = await axios.get(
+      `${process.env.REACT_APP_API}/api/compras`
+    );
 
     setCompras(response.data);
   };
@@ -55,15 +55,20 @@ const Compras = () => {
     const response = await axios.delete(
       `${process.env.REACT_APP_API}/api/compras/${id}`
     );
+    console.log(response);
     getCompras();
   };
   const getProveedores = async () => {
-    const response = await axios.get(`${process.env.REACT_APP_API}/api/proveedores`);
+    const response = await axios.get(
+      `${process.env.REACT_APP_API}/api/proveedores`
+    );
 
     setProveedores(response.data);
   };
   const getUsuarios = async () => {
-    const response = await axios.get(`${process.env.REACT_APP_API}/api/usuarios`);
+    const response = await axios.get(
+      `${process.env.REACT_APP_API}/api/usuarios`
+    );
 
     setUsuarios(response.data);
   };
@@ -134,7 +139,7 @@ const Compras = () => {
             </Col>
             <Col sm="12" className="descrip">
               <h4>Descripción</h4>
-              <h6>{(infoCompra?.descripcion)?.toUpperCase()}</h6>
+              <h6>{infoCompra?.descripcion?.toUpperCase()}</h6>
             </Col>
           </Row>
         </ModalBody>
@@ -249,14 +254,18 @@ const Compras = () => {
         <CardBody className="cont-">
           <Row className="mt-4">
             <Col>
-              <div  onClick={toggle} className={modal ? "active title-item" : "title-item"}>
+              <div
+                onClick={toggle}
+                className={modal ? "active title-item" : "title-item"}
+              >
                 NUEVA COMPRA
               </div>
             </Col>
             <Col>
-              <div  className={!modal ? "active title-item" : "title-item"}>LISTA DE COMPRAS</div>
+              <div className={!modal ? "active title-item" : "title-item"}>
+                LISTA DE COMPRAS
+              </div>
             </Col>
-            
           </Row>
         </CardBody>
       </Card>
@@ -312,12 +321,14 @@ const Compras = () => {
                         }
                       >
                         <i class="bi bi-list"></i>
-                        
                       </td>
-                      <td>  <i
+                      <td>
+                        {" "}
+                        <i
                           class="bi bi-trash icon_icono"
                           onClick={() => deleteCompra(com._id)}
-                        ></i></td>
+                        ></i>
+                      </td>
                     </tr>
                   ))}
                 </tbody>{" "}

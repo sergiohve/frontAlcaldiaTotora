@@ -5,7 +5,6 @@ import {
   Card,
   CardBody,
   CardTitle,
-  CardSubtitle,
   Table,
   Row,
   Col,
@@ -19,7 +18,6 @@ import {
   ModalFooter,
   Button,
 } from "reactstrap";
-import integrado from "../../assets/images/users/integrado.jpg";
 
 const Deudores = () => {
   const [deudores, setdeudores] = useState([]);

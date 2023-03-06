@@ -10,17 +10,13 @@ import {
   Form,
   FormGroup,
   Label,
-  Input,
-  Toast,
-  ToastBody,
-  ToastHeader,
+  Input
 } from "reactstrap";
 
 const Login = (props) => {
   const navigate = useNavigate();
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const [isLoggedin, setLoggedin] = React.useState(false);
   const [back, setBack] = React.useState(false)
   const [mensaje, setmensaje] = React.useState("");
   localStorage.setItem("login", "No_logueado");

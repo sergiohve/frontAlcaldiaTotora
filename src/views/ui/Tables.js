@@ -1,5 +1,4 @@
-import ProjectTables from "../../components/dashboard/ProjectTable";
-import { Row, Col, Table, Card, CardTitle, CardBody } from "reactstrap";
+import { Row } from "reactstrap";
 
 const Tables = () => {
   return (
